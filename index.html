@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フラクタルタイマー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="sand-canvas"></canvas>
+
+    <div id="phase-input" class="phase active">
+        <h1>フラクタルタイマー</h1>
+        <div id="app-summary-container">
+            <p class="app-summary active">ランダムな時間の断片を、あなたの創造性と集中力で満たしましょう。</p>
+            <p class="app-summary">このタイマーは、刻々と変わる時間に合わせて、今やるべきタスクを決め、集中して取り組むことをサポートします。</p>
+        </div>
+        <p>次のタイマー時間: <span id="next-timer-duration">--:--</span></p>
+        <p>これから行うタスクを記入してください。</p>
+        <textarea id="task-input" placeholder="例: 書類整理"></textarea>
+        <div id="countdown-15s" class="countdown-display">15</div>
+    </div>
+
+    <div id="phase-timer" class="phase">
+        <h2 id="current-task-display"></h2>
+        <div id="timer-display" class="timer-display">00:00</div>
+    </div>
+
+    <div id="phase-check" class="phase">
+        <h2>タスク完了チェック</h2>
+        <p id="task-check-display"></p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="task-complete-checkbox">
+            <label for="task-complete-checkbox">タスクは完了しましたか？</label>
+        </div>
+        <div id="countdown-10s" class="countdown-display">10</div>
+    </div>
+
+    <div id="phase-log" class="phase">
+        <h2>タスクログ</h2>
+        <div class="log-container">
+            <h3 class="log-heading">完了したタスク</h3>
+            <canvas id="gem-canvas"></canvas>
+            <h3 class="log-heading">完了できなかったタスク</h3>
+            <ul id="incomplete-tasks-list" class="task-list"></ul>
+        </div>
+        <button id="restart-button">新しいタイマーを始める</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    margin: 0;
+    color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+#sand-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#app-summary-container {
+    margin-bottom: 20px;
+    text-align: center;
+    min-height: 50px; /* テキスト切り替え時のガタつき防止 */
+}
+
+.app-summary {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+    display: none;
+    animation: fade-in 1s ease-in-out;
+}
+
+.app-summary.active {
+    display: block;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.phase {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    z-index: 1;
+}
+
+.phase.active {
+    display: block;
+}
+
+h1, h2 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+#next-timer-duration {
+    font-weight: bold;
+    color: #3498db;
+    font-size: 1.2em;
+}
+
+#task-input {
+    width: 90%;
+    height: 100px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.countdown-display {
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-top: 20px;
+}
+
+#timer-display {
+    font-size: 6rem;
+    color: #2c3e50;
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#task-complete-checkbox {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#restart-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#restart-button:hover {
+    background-color: #2980b9;
+}
+
+.log-container {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.log-heading {
+    margin-top: 25px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #bdc3c7;
+}
+
+.task-list li.completed {
+    border-left-color: #27ae60;
+}
+
+.task-list li.incomplete {
+    border-left-color: #c0392b;
+}
+
+.task-list li span {
+    flex-grow: 1;
+}
+
+.task-list li small {
+    color: #95a5a6;
+    margin-left: 10px;
+}
+
+#gem-canvas {
+    width: 100%;
+    height: 300px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
